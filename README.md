@@ -57,4 +57,6 @@ https://www.statcan.gc.ca/eng/developers/wds
 
 https://www.statcan.gc.ca/eng/developers/wds/user-guide
 
+## Census Web Data Services ##
 
+https://www12.statcan.gc.ca/wds-sdw/index-eng.cfm
