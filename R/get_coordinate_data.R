@@ -28,7 +28,7 @@ get_coordinate_data <- function(productId, coordinateId, nperiods) {
   response <- content(req)[[1]]
 
   # normalize_vectorpoint(response$object$vectorDataPoint[[1]])
-  returnFrame <- as.data.frame(lapply(fromJSON(toJSON(response$object$vectorDataPoint)), unlist(flatten_df_list)), stringsAsFactors = FALSE)
+  returnFrame <- as.data.frame(lapply(fromJSON(toJSON(response$object$vectorDataPoint)), unlist), stringsAsFactors = FALSE)
   return(returnFrame)
 }
 
