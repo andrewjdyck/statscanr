@@ -59,4 +59,6 @@ https://www.statcan.gc.ca/eng/developers/wds/user-guide
 
 ## Census Web Data Services ##
 
+For future development. Currently not supported. 
+
 https://www12.statcan.gc.ca/wds-sdw/index-eng.cfm
