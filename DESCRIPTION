@@ -1,7 +1,7 @@
 Package: statscanr
 Type: Package
 Title: A Data Pipeline Package for Statistics Canada Web Data Services
-Version: 0.1.0
+Version: 0.1.1
 Author: Andrew J. Dyck
 Maintainer: Andrew J. Dyck <andrew@andrewdyck.com>
 Description: An R package for interacting with the Statistics Canada Web Data Services.
@@ -10,5 +10,5 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: httr, jsonlite, plyr
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 Suggests: testthat
