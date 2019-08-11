@@ -23,11 +23,16 @@ get_changed_cube_data <- function(productId, coordinateId) {
       coordinate = coordinateId
     ))
   )
-  response <- content(req)[[1]]
-  if (response$status == 'SUCCESS') {
-    returnFrame <- as.data.frame(lapply(fromJSON(toJSON(response$object$vectorDataPoint)), unlist), stringsAsFactors = FALSE)
+  response <- content(req)
+  if (exists("response$status")) {
+    if (response$status == 'SUCCESS') {
+      returnFrame <- as.data.frame(lapply(fromJSON(toJSON(response$object$vectorDataPoint)), unlist), stringsAsFactors = FALSE)
+      returnFrame <- returnFrame[order(as.Date(returnFrame$refPer, '%Y-%m-%d')), ]
+    } else {
+      returnFrame <- data.frame()
+    }
   } else {
     returnFrame <- data.frame()
   }
-  return(returnFrame[order(as.Date(returnFrame$refPer, '%Y-%m-%d')), ])
+  return(returnFrame)
 }

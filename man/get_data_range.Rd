@@ -13,6 +13,10 @@ get_data_range(productId = NA, coordinateId = NA, vectorId = NA,
 \item{coordinateId}{The Statistics Canada Coordinate ID (10 digits).}
 
 \item{vectorId}{The Statistics Canada Vector ID (10 digits).}
+
+\item{startDt}{the start date for the range}
+
+\item{endDt}{the end date of the range}
 }
 \description{
 This function allows you to download a data range

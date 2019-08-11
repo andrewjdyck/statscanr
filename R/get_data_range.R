@@ -4,6 +4,8 @@
 #' @param productId The Statistics Canada Product ID.
 #' @param coordinateId The Statistics Canada Coordinate ID (10 digits).
 #' @param vectorId The Statistics Canada Vector ID (10 digits).
+#' @param startDt the start date for the range
+#' @param endDt the end date of the range
 #' @keywords productId, cube, coordinate
 #' @importFrom httr POST content
 #' @importFrom jsonlite toJSON fromJSON
