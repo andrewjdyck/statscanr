@@ -4,8 +4,13 @@
 \alias{get_data_range}
 \title{Download StatsCan Vector Data by date range}
 \usage{
-get_data_range(productId = NA, coordinateId = NA, vectorId = NA,
-  startDt, endDt)
+get_data_range(
+  productId = NA,
+  coordinateId = NA,
+  vectorId = NA,
+  startDt,
+  endDt
+)
 }
 \arguments{
 \item{productId}{The Statistics Canada Product ID.}
