@@ -12,6 +12,8 @@
 #' }
 download_product_cube <- function(productId) {
 
+  productId <- check_product_id(productId)
+
   temp1 <- tempfile()
   temp2 <- tempfile()
 

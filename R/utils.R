@@ -2,10 +2,12 @@
 #' @importFrom httr GET content
 # Get the download zip file url for a given product
 get_product_download_url <- function(pid) {
-  url <- paste0('https://www150.statcan.gc.ca/t1/wds/rest/getFullTableDownloadCSV/', pid, '/en')
 
-  request <- GET(url)
-  response <- content(request)
+  productId <- check_product_id(pid)
+  url <- paste0('https://www150.statcan.gc.ca/t1/wds/rest/getFullTableDownloadCSV/', productId, '/en')
+
+  request <- httr::GET(url)
+  response <- httr::content(request)
   if (response$status == "SUCCESS") {
     result <- response$object
   } else {
@@ -103,3 +105,14 @@ build_coordinates <- function(metadata) {
 }
 
 
+check_product_id <- function(productId) {
+  if (nchar(productId) > 8) {
+    # print('Product ID is too long. Trying the first 8 characters.')
+    return(substr(productId, 1, 8))
+  } else if (nchar(productId) == 8) {
+    return(productId)
+  } else {
+    # print('Product ID is too short. Check the ID and try again')
+    return(NA)
+  }
+}
